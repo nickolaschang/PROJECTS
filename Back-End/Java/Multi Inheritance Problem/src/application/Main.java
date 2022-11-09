@@ -1,17 +1,25 @@
 package application;
 
-import devices.Printer;
-import devices.Scanner;
+import devices.ComboDevice;
+import devices.ConcretePrinter;
+import devices.ConcreteScanner;
 
 public class Main {
 	public static void main(String[] args) {
 		
-		Printer printer = new Printer("1080");
-		printer.processDoc("My letter");
-		printer.print("My letter");
+		ConcretePrinter concretePrinter = new ConcretePrinter("1080");
+		concretePrinter.processDoc("My letter");
+		concretePrinter.print("My letter");
+		System.out.println();
 		
-		Scanner scanner = new Scanner("2003");
-		scanner.processDoc("My email");
-		System.out.println("Scan Result: " + scanner.scan());
+		ConcreteScanner concreteScanner = new ConcreteScanner("2003");
+		concreteScanner.processDoc("My email");
+		System.out.println("Scan Result: " + concreteScanner.scan());
+		System.out.println();
+		
+		ComboDevice comboDevice = new ComboDevice("2081");
+		comboDevice.processDoc("TESTCOMBO");
+		comboDevice.print("TESTCOMBOPRINT");
+		System.out.println("Scan Result: " + comboDevice.scan());
 	}
 }
