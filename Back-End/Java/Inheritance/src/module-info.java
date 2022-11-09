@@ -1,0 +1,9 @@
+/**
+ * 
+ */
+/**
+ * @author nicko
+ *
+ */
+module empregadosOO {
+}
