@@ -1,38 +1,42 @@
 package application;
 
-import entities.Product;
-import services.CalculationService;
-
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class Main {
 	
 	public static void main(String[] args) {
 		
-		List<Product> list = new ArrayList<>();
+		/*
+		 * List<Object>obj = new ArrayList<>();
+		 * List<Integer>number = new ArrayList<>();
+		 * obj = number;
+		 *
+		 * Compilation error, a List of Object can contain Integer, but a List of Integer cannot be a List of Object.
+		 */
 		
-		String path = "C:\\PROJETOS\\Back-End\\Java\\Generics\\test.txt";
+		/*
+		 * List<?>obj = new ArrayList<>();
+		 * List<Integer>number = new ArrayList<>();
+		 * obj = number;
+		 *
+		 * This works because we are now using the wildcard generic type <?>
+		 */
 		
-		try (BufferedReader br = new BufferedReader(new FileReader(path))) {
-			String line = br.readLine();
-			while (line != null) {
-				String[] fields = line.split(",");
-				list.add(new Product(fields[0], Double.parseDouble(fields[1])));
-				line = br.readLine();
-			}
-			Product x = CalculationService.max(list);
-			System.out.print("Highest value: ");
-			System.out.println(x);
-			
-			
-		} catch (IOException e) {
-			System.out.println("Error reading your file. " + e.getMessage());
+		List<Integer> myInts = Arrays.asList(5, 2, 10);
+		printList(myInts);
+		
+		List<String> myStrs = Arrays.asList("Alex", "Maria", "Bob");
+		printList(myStrs);
+	}
+	
+	public static void printList(List<?> list) {
+		// list.add(3) <- remove // to test
+		// wouldn't work, because the compiler cannot know what type of list it is going
+		// to be added (<?> type), therefore it catches the error beforehand.
+		for (Object obj : list) {
+			System.out.println(obj);
 		}
-		
-		
 	}
 }
