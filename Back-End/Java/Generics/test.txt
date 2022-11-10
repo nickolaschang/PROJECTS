@@ -1,0 +1,4 @@
+iphone,550
+tv,1600
+airfrier,350
+toaster,450
