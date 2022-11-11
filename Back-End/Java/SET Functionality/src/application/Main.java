@@ -8,14 +8,15 @@ import java.util.*;
 
 public class Main {
 	public static void main(String[] args) {
-		Set<Product> products = new HashSet<>();
+		
+		Set<Product> products = new TreeSet<>();
 		products.add(new Product("TV", 900.0));
 		products.add(new Product("Notebook", 1650.0));
 		products.add(new Product("Tablet", 400.0));
 		
-		Product product = new Product("Notebook", 1650.0);
-		
-		System.out.println(products.contains(product));
+		for (Product product : products){
+			System.out.println(product);
+		}
 		
 	}
 }
