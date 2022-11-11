@@ -1,5 +1,7 @@
 package application;
 
+import entitites.Client;
+
 import javax.swing.plaf.basic.BasicInternalFrameTitlePane;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -9,26 +11,17 @@ public class Main {
 	
 	public static void main(String[] args) {
 		
-		List<Integer> myInts = Arrays.asList(1, 2, 3, 4);
-		List<Double> myDoubles = Arrays.asList(3.14, 6.28);
-		List<Object> myObjs = new ArrayList<Object>();
+		Client client1 = new Client("Maria", "maria@gmail.com");
+		Client client2 = new Client("Maria", "Karia@gmail.com");
 		
-		copy(myInts, myObjs);
-		printList(myObjs);
-		copy(myDoubles, myObjs);
-		printList(myObjs);
-	}
+		String s1 = "Test";
+		String s2 = "Test";
+		
+		
+		System.out.println(client1.equals(client2));
+		System.out.println(client1 == client2);
+		System.out.println(s1 == s2);
+		
 	
-	public static void copy(List<? extends Number> source, List<? super Number> target) {
-		for (Number number : source) {
-			target.add(number);
-		}
-	}
-	
-	public static void printList(List<?> list) {
-		for (Object obj : list) {
-			System.out.print(obj + " ");
-		}
-		System.out.println();
 	}
 }
