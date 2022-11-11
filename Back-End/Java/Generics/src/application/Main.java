@@ -1,8 +1,6 @@
 package application;
 
-import entities.*;
-
-
+import javax.swing.plaf.basic.BasicInternalFrameTitlePane;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -11,29 +9,26 @@ public class Main {
 	
 	public static void main(String[] args) {
 		
-		List<Shape> myShapes = new ArrayList<>();
-		myShapes.add(new Rectangle(3, 2));
-		myShapes.add(new Circle(2.0));
+		List<Integer> myInts = Arrays.asList(1, 2, 3, 4);
+		List<Double> myDoubles = Arrays.asList(3.14, 6.28);
+		List<Object> myObjs = new ArrayList<Object>();
 		
-		List<Circle> myCircles = new ArrayList<>();
-		myCircles.add(new Circle(2));
-		myCircles.add(new Circle(3));
-		
-		List<Rectangle> myRectangles = new ArrayList<>();
-		myRectangles.add(new Rectangle(2, 6));
-		myRectangles.add(new Rectangle(3, 8));
-		
-		
-		System.out.println("Total area Shapes: " + String.format("%.2f", totalArea(myShapes)));
-		System.out.println("Total area Circles: " + String.format("%.2f", totalArea(myCircles)));
-		System.out.println("Total area Rectangles: " + String.format("%.2f", totalArea(myRectangles)));
+		copy(myInts, myObjs);
+		printList(myObjs);
+		copy(myDoubles, myObjs);
+		printList(myObjs);
 	}
 	
-	public static double totalArea(List<? extends Shape> list) {
-		double sum = 0;
-		for (Shape shape : list) {
-			sum += shape.area();
+	public static void copy(List<? extends Number> source, List<? super Number> target) {
+		for (Number number : source) {
+			target.add(number);
 		}
-		return sum;
+	}
+	
+	public static void printList(List<?> list) {
+		for (Object obj : list) {
+			System.out.print(obj + " ");
+		}
+		System.out.println();
 	}
 }
