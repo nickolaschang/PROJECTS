@@ -1,46 +1,44 @@
 package application;
 
-import entities.Product;
-
-import java.util.HashMap;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.LinkedHashMap;
 import java.util.Map;
-
+import java.util.Scanner;
 
 public class Main {
 	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		Map<String, Integer> votes = new LinkedHashMap<>();
 		
-		Map<Product, Double> stock = new HashMap<>();
 		
-		Product p1 = new Product("Tv", 900.0);
-		Product p2 = new Product("Notebook", 1200.0);
-		Product p3 = new Product("Tablet", 400.0);
+		System.out.print("Enter file Full path: ");
+		String path = sc.nextLine();
 		
-		stock.put(p1, 100.0);
-		stock.put(p2, 200.0);
-		stock.put(p3, 150.0);
-		
-		Product ps = new Product("Tv", 900.0);
-		
-		System.out.println("Contains 'ps' key: " + stock.containsKey(ps));
+		try (BufferedReader bufferedReader = new BufferedReader(new FileReader(path))) {
+			
+			String line = bufferedReader.readLine();
+			while (line != null) {
+				String[] lines = line.split(",");
+				String name = lines[0];
+				int count = Integer.parseInt(lines[1]);
+				
+				if (votes.containsKey(name)) {
+					int votesQuantity = votes.get(name);
+					votes.put(name, count + votesQuantity);
+				} else {
+					votes.put(name, count);
+				}
+				line = bufferedReader.readLine();
+			}
+			for (String key : votes.keySet()) {
+				System.out.println(key + ": " + votes.get(key));
+			}
+			
+		} catch (IOException error) {
+			System.out.println("Error: " + error.getMessage());
+		}
+		sc.close();
 	}
 }
-		
-		/*
-		Map<String, String> cookies = new TreeMap<>();
-		cookies.put("Username", "Maria");
-		
-		cookies.put("Email", "Maria@gmail.com");
-		cookies.put("Phone", "426648456");
-		
-		cookies.put("Phone", "666498415"); // will overwrite the last same key and update with the new value
-		
-		System.out.println("Cookies: ");
-		for (String cookie : cookies.keySet()) {
-			System.out.println(cookie + ": " + cookies.get(cookie));
-			
-		}
-		System.out.println("Contains phone key: " + cookies.containsKey("Phone"));
-		System.out.println("Cookie table Size: " + cookies.size());
-		*/
-	
-		
