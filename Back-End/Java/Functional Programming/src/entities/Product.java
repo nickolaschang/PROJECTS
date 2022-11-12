@@ -24,29 +24,6 @@ public class Product {
 	public void setPrice(Double price) {
 		this.price = price;
 	}
-	
-	public static boolean staticProductPredicate(Product product) {
-		return product.getPrice() >= 100;
-	}
-	
-	public boolean nonStaticProductPredicate() {
-		return price >= 100;
-	}
-	
-	public static void staticUpdate(Product product) {
-		product.setPrice(product.getPrice() * 1.1);
-	}
-	public void nonStaticUpdate(Product product){
-		price = price * 1.1;
-	}
-	
-	public static String staticUpperCaseName(Product product){
-		return product.getName().toUpperCase();
-	}
-	public String nonStaticUpperCaseName(){
-		return name.toUpperCase();
-	}
-	
 	@Override
 	public String toString() {
 		return "Product: " + name + "Price: $" + String.format("%.2f", price);
