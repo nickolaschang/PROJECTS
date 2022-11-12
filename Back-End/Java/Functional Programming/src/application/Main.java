@@ -1,11 +1,14 @@
 package application;
 
 import entities.Product;
+import util.PriceUpdate;
 import util.ProductPredicate;
 
 import java.util.ArrayList;
 
 import java.util.List;
+import java.util.function.Consumer;
+import java.util.function.Predicate;
 
 public class Main {
 	public static void main(String[] args) {
@@ -19,8 +22,10 @@ public class Main {
 		list.add(new Product("Cable - 5 ", 15.0));
 		list.add(new Product("HD Case - 6 ", 90.0));
 		
-		list.removeIf(new ProductPredicate());
-		System.out.println(list.toString());
+		list.forEach(Product::staticUpdate);
+		list.forEach(System.out::println);
+		
+		
 		
 		
 	}
