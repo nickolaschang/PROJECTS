@@ -1,14 +1,13 @@
 package application;
 
 import entities.Product;
-import util.PriceUpdate;
-import util.ProductPredicate;
+import util.UpperCaseName;
 
 import java.util.ArrayList;
 
 import java.util.List;
-import java.util.function.Consumer;
-import java.util.function.Predicate;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
 public class Main {
 	public static void main(String[] args) {
@@ -22,10 +21,13 @@ public class Main {
 		list.add(new Product("Cable - 5 ", 15.0));
 		list.add(new Product("HD Case - 6 ", 90.0));
 		
-		list.forEach(Product::staticUpdate);
-		list.forEach(System.out::println);
 		
-		
+		List < String > names = list.stream().map(product -> product.getName().toUpperCase()).collect(Collectors.toList());
+        //List < String > names = list.stream().map(function).collect(Collectors.toList());
+		//List<String> names = list.stream().map(Product::nonStaticUpperCaseName).collect(Collectors.toList());
+		//List<String> names = list.stream().map(Product::staticUpperCaseName).collect(Collectors.toList());
+		//List<String> names = list.stream().map(new UpperCaseName()).collect(Collectors.toList());
+		names.forEach(System.out::println);
 		
 		
 	}
