@@ -25,3 +25,11 @@ a:visited {
 .DSMeta-logo-container img {
   width: 235px;
 }
+.DSMeta-container {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+#SalesCard {
+  padding: 40px 10px;
+}

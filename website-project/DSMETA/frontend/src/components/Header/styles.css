@@ -1,0 +1,16 @@
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 220px;
+    background: linear-gradient(180deg, #1b4183 0%, #000000 100%);
+  }
+  .DSMeta-logo-container h1 {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    font-size: 24px;
+  }
+  .DSMeta-logo-container p {
+    font-size: 14px;
+    font-weight: 300;
+  }
