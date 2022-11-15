@@ -1,0 +1,16 @@
+.DSMeta-notify-button {
+    height: 45px;
+    width: 45px;
+    background-color: rgba(255, 107, 114, 0.1);
+    border: 1px solid;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+  
+  .DSMeta-notify-button img {
+    height: 19px;
+    width: 19px;
+  }
