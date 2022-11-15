@@ -1,11 +1,19 @@
-import NotificationButton from '../NotificationButton'
-import './styles.css'
+import NotificationButton from '../NotificationButton';
+import './styles.css';
 
-import DatePicker from "react-datepicker"
-import "react-datepicker/dist/react-datepicker.css"
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+import { useState } from 'react';
 
 
 function SalesCard() {
+    const max = new Date();
+    const min = new Date(new Date().setDate(new Date().getDate() - 90));
+
+    const [minDate, setMinDate] = useState(min);
+    const [maxDate, setMaxDate] = useState(max);
+
+
     return (
         <section id='sales'>
             <div className="DSMeta-container">
@@ -15,16 +23,16 @@ function SalesCard() {
                     <div>
                         <div className="DSMeta-input-box-formatting">
                             <DatePicker
-                                selected={new Date()}
-                                onChange={(date:Date)=> { }}
+                                selected={minDate}
+                                onChange={(date: Date) => setMinDate(date)}
                                 className="DSMeta-input-box"
                                 dateFormat="dd/MM/yyyy"
                             />
                         </div>
                         <div className="DSMeta-input-box-formatting">
-                        <DatePicker
-                                selected={new Date()}
-                                onChange={(date:Date)=> { }}
+                            <DatePicker
+                                selected={maxDate}
+                                onChange={(date: Date) => setMaxDate(date)}
                                 className="DSMeta-input-box"
                                 dateFormat="dd/MM/yyyy"
                             />
@@ -94,4 +102,4 @@ function SalesCard() {
         </section>
     )
 }
-export default SalesCard
+export default SalesCard;
