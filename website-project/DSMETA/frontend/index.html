@@ -1,13 +1,109 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + React + TS</title>
+    <title>DSMeta</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   </head>
   <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+    <header>
+      <div class="DSMeta-logo-container">
+        <img src="logo.svg" alt="DSMeta" />
+        <h1>DSMeta</h1>
+        <p>
+          Developed by
+          <a href="https://www.linkedin.com/in/nickolas-alves/"
+            >Nickolas Alves</a
+          >
+        </p>
+      </div>
+    </header>
+    <main>
+      <section id="sales">
+        <div class="DSMeta-container">
+          <div class="DSMeta-card">
+            <h2 class="DSMeta-sales-title">Sales</h2>
+
+            <div>
+              <div class="DSMeta-input-box-formatting">
+                <input class="DSMeta-input-box" type="text" />
+              </div>
+              <div class="DSMeta-input-box-formatting">
+                <input class="DSMeta-input-box" type="text" />
+              </div>
+            </div>
+
+            <div>
+              <div>
+                <table class="DSMeta-sales-table">
+                  <thead>
+                    <tr>
+                      <th class="DSMeta-showExtras">ID</th>
+                      <th class="DSMeta-showData">Data</th>
+                      <th class="DSMeta-showExtras">Views</th>
+                      <th class="DSMeta-showExtras">Sales</th>
+                      <th>Employee</th>
+                      <th>Total</th>
+                      <th>Notify</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th class="DSMeta-showExtras">ID</th>
+                      <td class="DSMeta-showData">08/07/2022</td>
+                      <th class="DSMeta-showExtras">Views</th>
+                      <th class="DSMeta-showExtras">Sales</th>
+                      <td>name1</td>
+                      <td>R$ 52003.00</td>
+                      <td>
+                        <div class="DSMeta-notify-button-container">
+                          <div class="DSMeta-notify-button">
+                            <img src="Vector.svg" alt="Notify" />
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th class="DSMeta-showExtras">ID</th>
+                      <td class="DSMeta-showData">08/07/2022</td>
+                      <th class="DSMeta-showExtras">Views</th>
+                      <th class="DSMeta-showExtras">Sales</th>
+                      <td>name1</td>
+                      <td>R$ 52003.00</td>
+                      <td>
+                        <div class="DSMeta-notify-button-container">
+                          <div class="DSMeta-notify-button">
+                            <img src="Vector.svg" alt="Notify" />
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th class="DSMeta-showExtras">ID</th>
+                      <td class="DSMeta-showData">08/07/2022</td>
+                      <th class="DSMeta-showExtras">Views</th>
+                      <th class="DSMeta-showExtras">Sales</th>
+                      <td>name1</td>
+                      <td>R$ 52003.00</td>
+                      <td>
+                        <div class="DSMeta-notify-button-container">
+                          <div class="DSMeta-notify-button">
+                            <img src="Vector.svg" alt="Notify" />
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
   </body>
 </html>
