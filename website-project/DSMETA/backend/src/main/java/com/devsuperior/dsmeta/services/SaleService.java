@@ -14,6 +14,7 @@ import com.devsuperior.dsmeta.entities.Sale;
 import com.devsuperior.dsmeta.repositories.SaleRepository;
 
 
+
 @Service
 @Repository
 public class SaleService {
