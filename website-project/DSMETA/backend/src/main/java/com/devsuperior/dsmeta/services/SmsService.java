@@ -33,7 +33,7 @@ public class SmsService {
 		
 		Sale sale = saleRepository.findById(orderId).get();
 		
-		String msg = "Hello there " + sale.getSellerName()+ " Carlingford Music Centre here, hope you are doing fine! Your order number: " + sale.getId() + " that you finished in: " + sale.getDate();
+		String msg = "Hello there " + sale.getSellerName()+ "! Carlingford Music Centre here, hope you are doing fine! Your order number: " + sale.getId() + " that you finished in: " + sale.getDate();
 		PhoneNumber to = new PhoneNumber(twilioPhoneTo);
 		PhoneNumber from = new PhoneNumber(twilioPhoneFrom);
 
